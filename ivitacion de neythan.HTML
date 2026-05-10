@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Invitación Neythan</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#ece7df;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:15px;
+    font-family:Arial, sans-serif;
+}
+
+/* CONTENEDOR */
+.invitacion{
+    position:relative;
+    width:100%;
+    max-width:380px;
+    cursor:pointer; /* 👈 importante */
+}
+
+/* IMAGEN */
+.invitacion img{
+    width:100%;
+    display:block;
+    border-radius:25px;
+}
+
+/* BOTÓN WHATSAPP INVISIBLE */
+.btn-whatsapp{
+    position:absolute;
+    bottom:9%;
+    left:50%;
+    transform:translateX(-50%);
+    width:70%;
+    height:8%;
+    background:transparent;
+    text-indent:-9999px;
+}
+
+/* HUELLITAS */
+.huella{
+    position:absolute;
+    font-size:24px;
+    opacity:0.35;
+    animation:flotar 4s ease-in-out infinite;
+}
+
+.h1{ top:3%; left:-5%; }
+.h2{ top:15%; right:-5%; }
+.h3{ top:35%; left:-7%; }
+.h4{ top:55%; right:-6%; }
+.h5{ bottom:18%; left:-5%; }
+.h6{ bottom:5%; right:-4%; }
+
+@keyframes flotar{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-8px); }
+    100%{ transform:translateY(0px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MÚSICA LOCAL -->
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="invitacion" onclick="iniciarMusica()">
+
+    <!-- HUELLITAS -->
+    <div class="huella h1">🐾</div>
+    <div class="huella h2">🐾</div>
+    <div class="huella h3">🐾</div>
+    <div class="huella h4">🐾</div>
+    <div class="huella h5">🐾</div>
+    <div class="huella h6">🐾</div>
+
+    <!-- IMAGEN -->
+    <img src="invitacion.jpg" alt="Invitación Neythan">
+
+    <!-- WHATSAPP -->
+    <a 
+      class="btn-whatsapp"
+      href="https://wa.me/59359116534?text=Hola,%20confirmo%20mi%20asistencia%20al%20primer%20mes%20de%20Neythan"
+      target="_blank">
+    </a>
+
+</div>
+
+<script>
+function iniciarMusica(){
+    const audio = document.getElementById("musica");
+    audio.play().catch(()=>{});
+}
+</script>
+
+</body>
+</html>
